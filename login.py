@@ -13,3 +13,14 @@ def login():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+# save the username and password in a file
+def save_credentials(username, password):
+    with open('credentials.txt', 'w') as f:
+        f.write(f'{username}:{password}')
+
+# read the username and password from the file
+def read_credentials():
+    with open('credentials.txt', 'r') as f:
+        return f.read().split(':')
+
